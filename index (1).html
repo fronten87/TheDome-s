@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171713">
+
+  <title>The DOME's Cafe & Resto | Tulungagung</title>
+  <meta name="description" content="Nikmati pengalaman kuliner, kopi, dan suasana hangat di The DOME's Cafe & Resto, Tulungagung.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #171713;
+      --surface: #22221c;
+      --cream: #f4eddf;
+      --muted: #b8b2a5;
+      --accent: #d9a96e;
+      --line: rgba(244,237,223,.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 23px;
+      border: 1px solid var(--accent);
+      font: inherit;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      color: #171713;
+      background: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.08);
+    }
+
+    .btn-outline {
+      color: var(--cream);
+      background: transparent;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(23,23,19,.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+    }
+
+    .brand span {
+      display: block;
+      font: 600 .58rem "DM Sans", sans-serif;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: .86rem;
+    }
+
+    .nav-links a:not(.btn):hover {
+      color: var(--accent);
+    }
+
+    .nav-links .btn {
+      padding: 10px 17px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      color: var(--cream);
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      min-height: min(780px, 88svh);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(16,16,13,.92) 0%, rgba(16,16,13,.65) 48%, rgba(16,16,13,.12) 100%),
+        linear-gradient(0deg, rgba(16,16,13,.5), transparent 50%),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6.6rem);
+      margin: 23px 0;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero p {
+      color: #e0d9cb;
+      max-width: 490px;
+      margin-bottom: 30px;
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 42px;
+      font-size: .8rem;
+      color: #e3dacb;
+    }
+
+    .hero-note span {
+      color: var(--accent);
+    }
+
+    /* INTRO STRIP */
+
+    .info-strip {
+      border-bottom: 1px solid var(--line);
+      background: #1d1d18;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-item {
+      padding: 27px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .info-item:first-child {
+      border-left: 1px solid var(--line);
+    }
+
+    .info-item strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    .info-item span {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-photos {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: end;
+      gap: 15px;
+    }
+
+    .about-photos img {
+      height: 390px;
+    }
+
+    .about-photos img:last-child {
+      height: 280px;
+      margin-bottom: -28px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin: 22px 0;
+    }
+
+    .text-link {
+      display: inline-block;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 5px;
+      margin-top: 7px;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      background: var(--cream);
+      color: #24231d;
+    }
+
+    .experience .section-heading p {
+      color: #6d695f;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      position: relative;
+      min-height: 370px;
+      overflow: hidden;
+      background: #333;
+    }
+
+    .experience-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: transform .5s;
+    }
+
+    .experience-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.83), transparent 75%);
+    }
+
+    .experience-card-content {
+      position: absolute;
+      z-index: 1;
+      bottom: 25px;
+      left: 25px;
+      right: 20px;
+      color: white;
+    }
+
+    .experience-card-content span {
+      color: var(--accent);
+      font-size: .75rem;
+      letter-spacing: 2px;
+    }
+
+    .experience-card-content h3 {
+      font-size: 1.7rem;
+      margin: 8px 0;
+    }
+
+    .experience-card-content p {
+      font-size: .85rem;
+      color: #ddd;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 230px 230px;
+      gap: 14px;
+    }
+
+    .gallery-grid img {
+      height: 100%;
+      transition: .35s;
+    }
+
+    .gallery-grid a {
+      overflow: hidden;
+    }
+
+    .gallery-grid a:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-grid a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* VISIT */
+
+    .visit {
+      background: var(--surface);
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .visit-copy p {
+      color: var(--muted);
+      margin: 20px 0;
+    }
+
+    .visit-details {
+      margin: 28px 0;
+      display: grid;
+      gap: 19px;
+    }
+
+    .visit-detail {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .visit-detail .icon {
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    .visit-detail strong {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .visit-detail span {
+      font-size: .84rem;
+      color: var(--muted);
+    }
+
+    .map-frame {
+      min-height: 410px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #2c2c25;
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 410px;
+      display: block;
+      border: 0;
+      filter: grayscale(.8) contrast(.95);
+    }
+
+    /* CTA */
+
+    .final-cta {
+      text-align: center;
+      padding: 100px 20px;
+      background:
+        linear-gradient(rgba(18,18,14,.82), rgba(18,18,14,.9)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .final-cta h2 {
+      max-width: 720px;
+      margin: 17px auto;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+      font-size: .85rem;
+    }
+
+    .socials a:hover {
+      color: var(--accent);
+    }
+
+    .floating-wa {
+      position: fixed;
+      z-index: 99;
+      bottom: 22px;
+      right: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      box-shadow: 0 8px 28px #0006;
+      font-size: 1.55rem;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-4px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .section {
+        padding: 75px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        padding: 25px 5%;
+        background: #1d1d18;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links .btn {
+        width: fit-content;
+      }
+
+      .hero {
+        min-height: 650px;
+        background-position: 60% center;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item,
+      .info-item:first-child {
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 19px 0;
+      }
+
+      .about-grid,
+      .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-photos img {
+        height: 320px;
+      }
+
+      .about-photos img:last-child {
+        height: 240px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        min-height: 330px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px 180px 180px;
+      }
+
+      .gallery-grid a:first-child {
+        grid-row: auto;
+        grid-column: span 2;
+      }
+
+      .map-frame,
+      .map-frame iframe {
+        min-height: 350px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .about-photos {
+        gap: 10px;
+      }
+
+      .about-photos img {
+        height: 250px;
+      }
+
+      .about-photos img:last-child {
+        height: 190px;
+      }
+
+      .gallery-grid {
+        grid-template-rows: 200px 145px 145px;
+        gap: 9px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- GANTI LINK KONTAK DI BAGIAN CONFIG JAVASCRIPT PALING BAWAH -->
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        THE DOME'S
+        <span>CAFE & RESTO</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Buka navigasi" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#visit">Lokasi</a>
+        <a href="#" class="btn btn-primary" data-wa>
+          Hubungi Kami ↗
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">A Place to Eat, Sip & Connect</span>
+
+          <h1>
+            More than<br>
+            coffee. <em>More</em><br>
+            than a place.
+          </h1>
+
+          <p>
+            Temukan tempat untuk menikmati hidangan,
+            menyeruput kopi, dan menciptakan momen
+            berharga bersama orang-orang terdekat.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#visit" class="btn btn-primary">
+              Temukan Lokasi ↗
+            </a>
+            <a href="#about" class="btn btn-outline">
+              Jelajahi Cafe
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span>✦</span>
+            <span>Good food · Great coffee · Better moments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="info-strip">
+      <div class="container info-grid">
+        <div class="info-item">
+          <strong>Food & Beverage</strong>
+          <span>Beragam pilihan makanan dan minuman</span>
+        </div>
+        <div class="info-item">
+          <strong>Gather Together</strong>
+          <span>Tempat untuk berbagi cerita</span>
+        </div>
+        <div class="info-item">
+          <strong>Tulungagung</strong>
+          <span>Temukan kami di pusat kota</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photos">
+          <img
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=85"
+            alt="Interior cafe yang nyaman"
+            loading="lazy">
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85"
+            alt="Barista menyiapkan kopi"
+            loading="lazy">
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">Our Story</div>
+          <h2>Tempat nyaman untuk setiap cerita.</h2>
+
+          <p>
+            Di The DOME's Cafe & Resto, setiap kunjungan
+            bisa menjadi momen untuk menikmati makanan,
+            bersantai, dan menghabiskan waktu bersama
+            keluarga maupun teman.
+          </p>
+
+          <p>
+            Dari obrolan santai hingga makan bersama,
+            jadikan setiap momen lebih berkesan dalam
+            suasana yang hangat dan menyenangkan.
+          </p>
+
+          <a class="text-link" href="#experience">
+            Kenali pengalaman kami ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The Experience</div>
+          <h2>Good moments start here.</h2>
+          <p>
+            Bukan hanya tentang apa yang ada di meja,
+            tetapi juga tentang momen yang kamu bawa pulang.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85"
+              alt="Secangkir kopi"
+              loading="lazy">
+            <div class="experience-card-content">
+              <span>01 / COFFEE</span>
+              <h3>Your Coffee Moment</h3>
+              <p>Luangkan waktu untuk menikmati secangkir kopi.</p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
+              alt="Suasana makan bersama"
+              loading="lazy">
+            <div class="experience-card-content">
+              <span>02 / DINING</span>
+              <h3>Made to Be Shared</h3>
+              <p>Nikmati waktu makan bersama orang terdekat.</p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <img
+              src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=85"
+              alt="Meja makan bersama teman"
+              loading="lazy">
+            <div class="experience-card-content">
+              <span>03 / GATHER</span>
+              <h3>Stories & Togetherness</h3>
+              <p>Tempat untuk berkumpul dan menciptakan cerita.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Visual Diary</div>
+          <h2>A little look inside.</h2>
+          <p>
+            Intip inspirasi suasana cafe untuk kunjunganmu
+            berikutnya.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <a href="#visit" aria-label="Lihat lokasi cafe">
+            <img
+              src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=85"
+              alt="Suasana cafe"
+              loading="lazy">
+          </a>
+          <a href="#visit" aria-label="Lihat lokasi cafe">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=85"
+              alt="Kopi hangat"
+              loading="lazy">
+          </a>
+          <a href="#visit" aria-label="Lihat lokasi cafe">
+            <img
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=85"
+              alt="Interior restoran"
+              loading="lazy">
+          </a>
+          <a href="#visit" aria-label="Lihat lokasi cafe">
+            <img
+              src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=700&q=85"
+              alt="Kopi dan suasana meja"
+              loading="lazy">
+          </a>
+          <a href="#visit" aria-label="Lihat lokasi cafe">
+            <img
+              src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=700&q=85"
+              alt="Hidangan di atas meja"
+              loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section visit" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <div class="eyebrow">Come Find Us</div>
+          <h2>Your next stop is here.</h2>
+
+          <p>
+            Kami menantikan kunjunganmu. Simpan lokasi
+            dan buka Google Maps untuk mendapatkan petunjuk
+            arah menuju The DOME's Cafe & Resto.
+          </p>
+
+          <div class="visit-details">
+            <div class="visit-detail">
+              <div class="icon">⌖</div>
+              <div>
+                <strong>Alamat</strong>
+                <span>
+                  Jl. Urip Sumoharjo No. 72B, Kepatihan,
+                  Tulungagung, Jawa Timur 66219
+                </span>
+              </div>
+            </div>
+
+            <div class="visit-detail">
+              <div class="icon">◷</div>
+              <div>
+                <strong>Jam operasional</strong>
+                <span>
+                  Senin–Jumat: 10.30–21.15<br>
+                  Sabtu–Minggu: 08.00–21.15
+                </span>
+              </div>
+            </div>
+
+            <div class="visit-detail">
+              <div class="icon">☎</div>
+              <div>
+                <strong>Reservasi & informasi</strong>
+                <span>Hubungi tim kami melalui WhatsApp.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" data-maps href="#">
+              Buka Google Maps ↗
+            </a>
+            <a class="btn btn-outline" data-wa href="#">
+              WhatsApp Kami
+            </a>
+          </div>
+        </div>
+
+        <div class="map-frame">
+          <iframe
+            title="Peta lokasi The DOME's Cafe & Resto"
+            src="https://maps.google.com/maps?q=The%20DOME%27s%20Cafe%20%26%20Resto%2C%20Tulungagung&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="eyebrow">Your Table Awaits</div>
+      <h2>Make time for good food and good company.</h2>
+      <p>Rencanakan kunjunganmu ke The DOME's Cafe & Resto.</p>
+      <a href="#" class="btn btn-primary" data-wa>
+        Hubungi Kami via WhatsApp ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        THE DOME'S
+        <span>CAFE & RESTO</span>
+      </a>
+
+      <p>© <span id="year"></span> The DOME's Cafe & Resto.</p>
+
+      <div class="socials">
+        <a href="#" data-instagram>Instagram ↗</a>
+        <a href="#" data-maps>Google Maps ↗</a>
+        <a href="#" data-wa>WhatsApp ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-wa" href="#" data-wa
+     aria-label="Hubungi kami melalui WhatsApp"
+     title="Chat WhatsApp">
+    ☎
+  </a>
+
+  <script>
+    /*
+      KONFIGURASI WEBSITE
+      Ubah data di bawah ini sesuai akun resmi cafe.
+      Format nomor WhatsApp: kode negara + nomor,
+      tanpa tanda +, spasi, atau tanda hubung.
+    */
+
+    const CONFIG = {
+      whatsapp: "6282119968899",
+      instagram: "https://www.instagram.com/thedomescafe.tulungagung/",
+      maps: "https://maps.app.goo.gl/XLDbQhE2fnB2WpwD6"
+    };
+
+    // Pasang link WhatsApp, Instagram, dan Maps.
+    document.querySelectorAll("[data-wa]").forEach(link => {
+      link.href =
+        "https://wa.me/" + CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(
+          "Halo The DOME's Cafe & Resto, saya ingin bertanya tentang cafe."
+        );
+
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+
+    document.querySelectorAll("[data-instagram]").forEach(link => {
+      link.href = CONFIG.instagram;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+
+    document.querySelectorAll("[data-maps]").forEach(link => {
+      link.href = CONFIG.maps;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+
+    // Menu mobile.
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Tahun otomatis.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
